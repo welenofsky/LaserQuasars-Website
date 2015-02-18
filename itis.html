@@ -1,0 +1,290 @@
+<html>
+<head>
+<title>Laser Quasars
+</title>
+<style type="text/css">
+
+#popitmenu{
+position: absolute;
+background-color: white;
+border:1px solid black;
+font: normal 12px Verdana;
+line-height: 18px;
+z-index: 100;
+visibility: hidden;
+}
+
+#popitmenu a{
+text-decoration: none;
+padding-left: 6px;
+color: black;
+display: block;
+}
+
+#popitmenu a:hover{ /*hover background color*/
+background-color: #CCFF9D;
+}
+
+</style>
+
+<script type="text/javascript">
+
+/***********************************************
+* Pop-it menu- © Dynamic Drive (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+var defaultMenuWidth="150px" //set default menu width.
+
+var linkset=new Array()
+//SPECIFY MENU SETS AND THEIR LINKS. FOLLOW SYNTAX LAID OUT
+
+linkset[0]='<a href="http://dynamicdrive.com">Dynamic Drive</a>'
+linkset[0]+='<hr>' //Optional Separator
+linkset[0]+='<a href="http://www.javascriptkit.com">JavaScript Kit</a>'
+linkset[0]+='<a href="http://www.codingforums.com">Coding Forums</a>'
+linkset[0]+='<a href="http://www.cssdrive.com">CSS Drive</a>'
+linkset[0]+='<a href="http://freewarejava.com">Freewarejava</a>'
+
+linkset[1]='<a href="http://msnbc.com">MSNBC</a>'
+linkset[1]+='<a href="http://cnn.com">CNN</a>'
+linkset[1]+='<a href="http://news.bbc.co.uk">BBC News</a>'
+linkset[1]+='<a href="http://www.washingtonpost.com">Washington Post</a>'
+
+////No need to edit beyond here
+
+var ie5=document.all && !window.opera
+var ns6=document.getElementById
+
+if (ie5||ns6)
+document.write('<div id="popitmenu" onMouseover="clearhidemenu();" onMouseout="dynamichide(event)"></div>')
+
+function iecompattest(){
+return (document.compatMode && document.compatMode.indexOf("CSS")!=-1)? document.documentElement : document.body
+}
+
+function showmenu(e, which, optWidth){
+if (!document.all&&!document.getElementById)
+return
+clearhidemenu()
+menuobj=ie5? document.all.popitmenu : document.getElementById("popitmenu")
+menuobj.innerHTML=which
+menuobj.style.width=(typeof optWidth!="undefined")? optWidth : defaultMenuWidth
+menuobj.contentwidth=menuobj.offsetWidth
+menuobj.contentheight=menuobj.offsetHeight
+eventX=ie5? event.clientX : e.clientX
+eventY=ie5? event.clientY : e.clientY
+//Find out how close the mouse is to the corner of the window
+var rightedge=ie5? iecompattest().clientWidth-eventX : window.innerWidth-eventX
+var bottomedge=ie5? iecompattest().clientHeight-eventY : window.innerHeight-eventY
+//if the horizontal distance isn't enough to accomodate the width of the context menu
+if (rightedge<menuobj.contentwidth)
+//move the horizontal position of the menu to the left by it's width
+menuobj.style.left=ie5? iecompattest().scrollLeft+eventX-menuobj.contentwidth+"px" : window.pageXOffset+eventX-menuobj.contentwidth+"px"
+else
+//position the horizontal position of the menu where the mouse was clicked
+menuobj.style.left=ie5? iecompattest().scrollLeft+eventX+"px" : window.pageXOffset+eventX+"px"
+//same concept with the vertical position
+if (bottomedge<menuobj.contentheight)
+menuobj.style.top=ie5? iecompattest().scrollTop+eventY-menuobj.contentheight+"px" : window.pageYOffset+eventY-menuobj.contentheight+"px"
+else
+menuobj.style.top=ie5? iecompattest().scrollTop+event.clientY+"px" : window.pageYOffset+eventY+"px"
+menuobj.style.visibility="visible"
+return false
+}
+
+function contains_ns6(a, b) {
+//Determines if 1 element in contained in another- by Brainjar.com
+while (b.parentNode)
+if ((b = b.parentNode) == a)
+return true;
+return false;
+}
+
+function hidemenu(){
+if (window.menuobj)
+menuobj.style.visibility="hidden"
+}
+
+function dynamichide(e){
+if (ie5&&!menuobj.contains(e.toElement))
+hidemenu()
+else if (ns6&&e.currentTarget!= e.relatedTarget&& !contains_ns6(e.currentTarget, e.relatedTarget))
+hidemenu()
+}
+
+function delayhidemenu(){
+delayhide=setTimeout("hidemenu()",500)
+}
+
+function clearhidemenu(){
+if (window.delayhide)
+clearTimeout(delayhide)
+}
+
+if (ie5||ns6)
+document.onclick=hidemenu
+
+</script>
+</head>
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div align="center">
+<table id="Table_01" width="801" height="601" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td rowspan="12"><img src="images/Layout_01.gif" width="99" height="279" alt=""></td>
+		<td>
+			<img src="images/Layout_02.gif" width="2" height="15" alt=""></td>
+		<td colspan="8">
+			<img src="images/Layout_03.gif" width="587" height="15" alt=""></td>
+		<td rowspan="15">
+			<img src="images/Layout_04.gif" width="10" height="578" alt=""></td>
+		<td rowspan="11"><img src="images/Layout_05.gif" width="102" height="213" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="15" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="4" rowspan="3">
+			<img src="images/Layout_06.gif" width="347" height="91" alt=""></td>
+		<td>
+			<img src="images/Layout_07.gif" width="7" height="7" alt=""></td>
+		<td colspan="4" rowspan="2">
+			<img src="images/Layout_08.gif" width="235" height="11" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="7" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="3">
+			<img src="images/Layout_09.gif" width="7" height="85" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="4" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="3" rowspan="2" background="images/Layout_10.gif" width="234" height="81">			<div align="center">
+		  <p class="style1">Laser tag arena &amp; Arcade</p>
+		  </div></td>
+		<td rowspan="5">
+			<img src="images/Layout_11.gif" width="1" height="122" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="80" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="4">
+			<img src="images/Layout_12.gif" width="347" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="1" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<img src="images/Layout_13.gif" width="7" height="15" alt=""></td>
+		<td colspan="6">
+			<img src="images/Layout_14.gif" width="581" height="15" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="15" alt=""></td>
+	</tr>
+	<tr>
+		<td height="25" colspan="8">
+			<img src="images/Layout_15.gif" width="588" height="14" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="25" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="5">
+			<img src="images/Layout_16.gif" width="2" height="132" alt=""></td>
+		<td colspan="2" rowspan="2">
+			<img src="images/Layout_17.gif" width="46" height="29" alt=""></td>
+		<td colspan="3" rowspan="2" background="images/Layout_18.gif" width="312" height="29"><font size="2">&nbsp;</font><center>
+		 <span class="style32"><a href="index.html">HOME</a> | <a href="gallery.htm" target="intro">GALLERY</a> | <a href="members.htm" target="intro">MEMBERS</a> | <a href="info.html" onMouseover="showmenu(event,linkset[1], '180px')" onMouseout="delayhidemenu()">INFO</a> |
+          <a href="contact.htm" target="intro">CONTACT</a></span> 
+		</center></td>
+		<td colspan="2">
+			<img src="images/Layout_19.gif" width="228" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="1" alt=""></td>
+	</tr>
+	<tr>
+		<td height="28" colspan="3">
+			<img src="images/Layout_20.gif" width="229" height="28" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="28" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="6" rowspan="7" background="images/Layout_21.gif" width="403" height="409"><iframe src="intro.htm" name="intro" width="403" height="402" frameborder="0" allowtransparency="1"></iframe></td>
+		<td background="images/spacer.gif" width=183" height=28">			</td>
+		<td rowspan="6">
+			<img src="images/Layout_23.gif" width="1" height="402" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="28" alt=""></td>
+	</tr>
+	<tr>
+		<td width="183" height="368" rowspan="4" align="left" valign="top" background="images/spacer.gif"><div align="left"><img src="cut logo of quasar.png" alt="Laser Quasars" width="180" height="161"></div></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="9" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="2">
+			<img src="images/Layout_25.gif" width="102" height="183" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="66" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="2" rowspan="4"><img src="images/Layout_26.gif" width="101" height="306" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="117" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="3">
+			<img src="images/Layout_27.gif" width="102" height="189" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="176" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="2">
+			<img src="images/spacer.gif" width="183" height="13" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="6" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/Layout_29.gif" width="1" height="7" alt=""></td>
+		<td>
+			<img src="images/Layout_30.gif" width="10" height="7" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="7" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="12" background="images/Layout_31.gif" width="800" height="15">			<h5 align="center">Copyright 2006 Laser Quasars&copy;</h5></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="15" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/spacer.gif" width="99" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="2" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="5" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="41" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="299" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="7" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="6" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="45" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="183" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="10" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="102" height="1" alt=""></td>
+		<td></td>
+	</tr>
+</table>
+</div>
+</body>
+</html>
